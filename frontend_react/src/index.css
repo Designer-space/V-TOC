@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+
+  :root{
+    --clr-accent-100: 255 255 255;
+    --clr-accent-800: 17 24 39;
+    --clr-accent-900: 0 0 0;
+
+    --fluid-fs-base: clamp(1rem, 0.9556rem + 0.2222vw, 1.125rem);
+    --fluid-fs-header: clamp(6.25rem, 0.8929rem + 26.7857vw, 25rem);
+  }
+
+  @font-face{
+    font-family: 'Spacemono';
+    font-weight: 400;
+    src: url('./assets/font/Space-Mono.woff2') format('woff2'),
+        url('./assets/font/Space-Mono.woff') format('woff')
+  }
+  @font-face{
+    font-family: 'Orelegaone';
+    font-weight: 400;
+    src: url('./assets/font/Orelegaone.woff2') format('woff2'),
+        url('./assets/font/Orelegaone.woff') format('woff')
+  }
+}
+
+body{
+  font-family: 'Spacemono';
+  font-size: 1.125rem;
+  color: rgb(var(--clr-accent-100));
+  background-color: rgb(var(--clr-accent-800));
+
+  min-height: 100vh;
+}
