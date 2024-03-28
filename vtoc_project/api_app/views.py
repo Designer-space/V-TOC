@@ -23,14 +23,16 @@ class UserViewSet(viewsets.ModelViewSet):
 
 @api_view(["POST"])
 def register(request):
-    
+    print(request)
     data = JSONParser().parse(request)
-    
+    print(data)
     user_serialize = UserRegisterSerializer(data=data)
     if user_serialize.is_valid():
         
         # data['password'] = make_password(data['password'])
+
         user = user_serialize.save()
+
 
         refresh = RefreshToken.for_user(user)
 
